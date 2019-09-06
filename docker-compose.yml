@@ -1,0 +1,32 @@
+
+version: '3'
+services:
+  web:
+  # redis-server:
+  #   image: 'redis' #to download the redis image
+ 
+    #build: .      #look for a docker file to build
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"  #local-machine port: container-port
+    volumes:
+      - /app/node_modules
+      - .:/app     #mapping directory outside the container to inside container
+
+  tests:
+    build:
+       context: .
+       dockerfile: Dockerfile.dev
+    
+    volumes:
+      - /app/node_modules
+      - .:/app     #mapping directory outside the container to inside container
+
+    command: ["npm", "run", "test"]
+
+
+
+
+  
