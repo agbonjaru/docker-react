@@ -1,0 +1,9 @@
+sudo: required #tells the need for superuser permission
+services:
+  - docker   #install a unit of docker
+
+before_install:
+  - docker build -t jstryngs/docker-react -f Dockerfile.dev .      # command to be executed before test run
+
+script:
+  - docker run jstryngs/docker-react npm run test -- --coverage
