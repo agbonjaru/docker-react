@@ -3,7 +3,7 @@ services:
   - docker   #install a unit of docker
 
 
-install: travis_wait mvn install
+
 
 before_install:
   - docker build -t jstryngs/docker-react -f Dockerfile.dev .      # command to be executed before test run
