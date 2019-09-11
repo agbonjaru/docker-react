@@ -1,6 +1,6 @@
-sudo: required #tells the need for superuser permission
+sudo: required 
 services:
-  - docker   #install a unit of docker
+  - docker   
 
 
 
