@@ -14,7 +14,7 @@ RUN npm run build
 
 ##<-- RUN PHASE -->##
 
-FROM nginx
+FROM nginx:1.21.6
 
 #    for the server#
 
